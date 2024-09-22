@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Test</title>
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            z-index: 1000;
+        }
+
+        #popupOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div id="popupOverlay"></div>
+
+<div id="popup-announcement" style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #ff5099; font-family: Arial, sans-serif;">Participez à la Semaine de Sensibilisation pour Prendre Soin de votre Cœur !</h2>
+    <p style="font-family: Arial, sans-serif; color: #333;">À l'occasion de la Journée Mondiale du Cœur, qui aura lieu le <strong>29 septembre</strong>, nous organisons une <strong>campagne de sensibilisation</strong> dédiée à la santé cardiaque toute la semaine.</p>
+    
+    <h3 style="color: #01a4c7; font-family: Arial, sans-serif;">Participez à notre Quiz !</h3>
+    <p style="font-family: Arial, sans-serif; color: #333;">Un <a href="https://kahoot.it/challenge/02196510?challenge-id=c935531f-3b89-46c1-ab51-e01109ade77d_1727003462704&amp;embed=true" target="_blank" style="color: #01a4c7; text-decoration: underline;"><strong>quiz</strong></a> interactif a été mis en place pour tester vos connaissances sur les bonnes pratiques pour prendre soin de votre cœur. Les <strong>10 premiers</strong> recevront une invitation pour participer à un <strong>atelier pilote de respiration guidée d'1h</strong>, qui aura lieu le <strong>16 octobre de 13h à 14h</strong>.</p>
+    <p style="font-family: Arial, sans-serif; color: #ff5099;"><strong>⚠️ Attention :</strong> Cet atelier est déconseillé aux personnes enceintes, aux personnes souffrant d'épilepsie ou de maladies cardiaques graves.</p>
+    
+    <h3 style="color: #01a4c7; font-family: Arial, sans-serif;">Consultez nos affiches !</h3>
+    <p style="font-family: Arial, sans-serif; color: #333;">Des affiches expliquant les <strong>gestes à adopter</strong> pour protéger votre cœur sont également disponibles dans les <strong>espaces communs de Bersol</strong>, diffusées sur l'<strong>écran TV</strong> et accessibles sur la page d'accueil de <strong>FineNet</strong>.</p>
+    
+    <p style="font-family: Arial, sans-serif; color: #333; text-align: center;">Prenons tous soin de notre cœur ensemble !</p>
+    <button onclick="closePopup()">Fermer</button>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popupOverlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+
+    // Affiche le pop-up après un délai de 2 secondes
+    window.onload = function() {
+        setTimeout(openPopup, 2000);
+    };
+</script>
+
+</body>
+</html>
